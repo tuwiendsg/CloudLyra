@@ -28,16 +28,16 @@
 	iii. deploy esper on Tomcat 7.x server
 
 
-5. 	Installation CLOUDLYRA:
+5. 	Installation CloudLyra:
 	
-	i. configure for CLOUDLYRA at EPICS/CLOUDLYRA/src/main/webapp/WEB-INF/config.properties. The most important configurations are DB.CLOUDLYRA.IP, DB.CLOUDLYRA.USERNAME and DB.CLOUDLYRA.PASSWORD
+	i. configure for CloudLyra at CloudLyra/CloudLyra/src/main/webapp/WEB-INF/config.properties. The most important configurations are DB.CLOUDLYRA.IP, DB.CLOUDLYRA.USERNAME and DB.CLOUDLYRA.PASSWORD
 	iii. Compiel CLOUDLYRA with maven2
 	iv. deploy CLOUDLYRA on Tomcat 7.x server
 
 	
 6. 	Getting Started:
 	
-	i. Browse the web interface for data analytics of CLOUDLYRA at http://[ip]:8080/CLOUDLYRA/
+	i. Browse the web interface for data analytics of CloudLyra at http://[ip]:8080/CloudLyra/
 	ii. Go to menu “DAF” to import/delete a data analytic function. Examples of data analytic function can be found in CloudLyra/CloudLyra/examples/example1/daf3 
 	iii. Go to salsa and turn on gas sensors http://128.130.172.215:8080/salsa-engine/?id=sensorsWorkload
 	iii. After import a data analytic function. Go to menu “Analytics”. Choose streaming data. And click start to start analytic.
