@@ -1,4 +1,4 @@
 CloudLyra
 =====
 
-Elastic Hybrid Data Analytics in Cloud
+Cloud-based Elastic Hybrid Data Analytics
