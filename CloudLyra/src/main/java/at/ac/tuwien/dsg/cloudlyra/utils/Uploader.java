@@ -92,6 +92,8 @@ public class Uploader extends HttpServlet {
         String dafName = "";
         String dafType = "";
         
+         
+        
         if (ServletFileUpload.isMultipartContent(request)) {
             try {
                 List<FileItem> multiparts = new ServletFileUpload(
