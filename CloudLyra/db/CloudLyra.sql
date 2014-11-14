@@ -1,27 +1,32 @@
-/*
- Navicat Premium Data Transfer
+-- phpMyAdmin SQL Dump
+-- version 4.0.10deb1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Nov 14, 2014 at 09:45 AM
+-- Server version: 5.5.38-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.3
 
- Source Server         : DEPIC
- Source Server Type    : MySQL
- Source Server Version : 50521
- Source Host           : localhost
- Source Database       : EDASICH
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
- Target Server Type    : MySQL
- Target Server Version : 50521
- File Encoding         : utf-8
 
- Date: 10/24/2014 14:38:42 PM
-*/
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
-SET NAMES utf8;
-SET FOREIGN_KEY_CHECKS = 0;
+--
+-- Database: `CLOUDLYRA`
+--
 
--- ----------------------------
---  Table structure for `AnalyticEngine`
--- ----------------------------
-DROP TABLE IF EXISTS `AnalyticEngine`;
-CREATE TABLE `AnalyticEngine` (
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `AnalyticEngine`
+--
+
+CREATE TABLE IF NOT EXISTS `AnalyticEngine` (
   `analyticEngineID` varchar(30) DEFAULT NULL,
   `analyticEngineName` varchar(30) DEFAULT NULL,
   `ip` varchar(30) DEFAULT NULL,
@@ -29,37 +34,44 @@ CREATE TABLE `AnalyticEngine` (
   `api` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- ----------------------------
---  Records of `AnalyticEngine`
--- ----------------------------
-BEGIN;
-INSERT INTO `AnalyticEngine` VALUES ('es', 'esper', 'localhost', '8080', '/ESPERStreamProcessing/rest/esper'), ('jbpm', 'jbpm', 'localhost', '8080', '/JBPMEngine/rest/jbpm');
-COMMIT;
+--
+-- Dumping data for table `AnalyticEngine`
+--
 
--- ----------------------------
---  Table structure for `Daf`
--- ----------------------------
-DROP TABLE IF EXISTS `Daf`;
-CREATE TABLE `Daf` (
+INSERT INTO `AnalyticEngine` (`analyticEngineID`, `analyticEngineName`, `ip`, `port`, `api`) VALUES
+('es', 'esper', 'localhost', '8080', '/ESPERStreamProcessing/rest/esper'),
+('jbpm', 'jbpm', 'localhost', '8080', '/JBPMEngine/rest/jbpm');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Daf`
+--
+
+CREATE TABLE IF NOT EXISTS `Daf` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `file` mediumblob,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
--- ----------------------------
---  Table structure for `Event`
--- ----------------------------
-DROP TABLE IF EXISTS `Event`;
-CREATE TABLE `Event` (
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Event`
+--
+
+CREATE TABLE IF NOT EXISTS `Event` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `daf` varchar(30) DEFAULT NULL,
   `detected_time` varchar(50) DEFAULT NULL,
   `event_values` varchar(255) DEFAULT NULL,
   `severity` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1797 ;
 
-SET FOREIGN_KEY_CHECKS = 1;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

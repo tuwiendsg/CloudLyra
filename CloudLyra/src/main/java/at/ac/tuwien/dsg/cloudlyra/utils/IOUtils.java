@@ -7,9 +7,13 @@ package at.ac.tuwien.dsg.cloudlyra.utils;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.apache.commons.io.FileUtils;
 
 /**
  *
@@ -55,6 +59,17 @@ public class IOUtils {
 
         }
         return data;
+    }
+    
+    public static void cleanTempData(){
+        String tomcatTempFolder = System.getProperty("java.io.tmpdir");
+        File dir = new File(tomcatTempFolder);
+        try { 
+            FileUtils.cleanDirectory(dir);
+        } catch (IOException ex) {
+            Logger.getLogger(IOUtils.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
 }

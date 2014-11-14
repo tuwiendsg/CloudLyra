@@ -56,11 +56,11 @@ public class TaskDelivery {
                 = new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
         String detectedTime = ft.format(dNow);
 
-        String ip = Configuration.getConfiguration("DB.EDASICH.IP");
-        String port = Configuration.getConfiguration("DB.EDASICH.PORT");
-        String database = Configuration.getConfiguration("DB.EDASICH.DATABASE");
-        String username = Configuration.getConfiguration("DB.EDASICH.USERNAME");
-        String password = Configuration.getConfiguration("DB.EDASICH.PASSWORD");
+        String ip = Configuration.getConfiguration("DB.CLOUDLYRA.IP");
+        String port = Configuration.getConfiguration("DB.CLOUDLYRA.PORT");
+        String database = Configuration.getConfiguration("DB.CLOUDLYRA.DATABASE");
+        String username = Configuration.getConfiguration("DB.CLOUDLYRA.USERNAME");
+        String password = Configuration.getConfiguration("DB.CLOUDLYRA.PASSWORD");
 
         MySqlConnectionManager connectionManager = new MySqlConnectionManager(ip, port, database, username, password);
 

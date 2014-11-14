@@ -1,8 +1,8 @@
 
-<%@page import="at.ac.tuwien.dsg.edasich.service.core.dafstore.DafStore"%>
+<%@page import="at.ac.tuwien.dsg.cloudlyra.service.core.dafstore.DafStore"%>
 <%@page import="java.sql.ResultSet"%>
-<%@page import="at.ac.tuwien.dsg.edasich.configuration.Configuration"%>
-<%@page import="at.ac.tuwien.dsg.edasich.service.engine.AnalyticController"%>
+<%@page import="at.ac.tuwien.dsg.cloudlyra.configuration.Configuration"%>
+<%@page import="at.ac.tuwien.dsg.cloudlyra.service.engine.AnalyticController"%>
 <%@page import="java.util.logging.Level"%>
 <%@page import="java.util.logging.Logger"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>EDASICH</title>
+        <title>CloudLyra</title>
     </head>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
     <script>
@@ -31,7 +31,7 @@
     <% Logger logger = Logger.getLogger(this.getClass().getName());%>
     <body>
 
-        <h3>EDASICH</h3>
+        <h3>CloudLyra</h3>
         <header>
 
             <div class="nav">

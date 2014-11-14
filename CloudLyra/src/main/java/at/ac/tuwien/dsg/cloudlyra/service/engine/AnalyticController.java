@@ -11,6 +11,7 @@ import at.ac.tuwien.dsg.cloudlyra.entity.daf.complexeventprocessing.DataAnalytic
 import at.ac.tuwien.dsg.cloudlyra.service.engine.ext.AnalyticEngineConfiguration;
 import at.ac.tuwien.dsg.cloudlyra.service.core.dafstore.DafStore;
 import at.ac.tuwien.dsg.cloudlyra.service.engine.ext.AnalyticEngineManager;
+import at.ac.tuwien.dsg.cloudlyra.utils.IOUtils;
 import at.ac.tuwien.dsg.cloudlyra.utils.JAXBUtils;
 import at.ac.tuwien.dsg.cloudlyra.utils.RestfulWSClient;
 import at.ac.tuwien.dsg.cloudlyra.utils.TextParser;
@@ -48,6 +49,7 @@ public class AnalyticController {
         DafStore dafStore = new DafStore();
         System.out.println("Stop: " + daf);
         dafStore.updateDAF(daf, "stop");
+        IOUtils.cleanTempData();
         
        // AnalyticEngineConfiguration aec = Configuration.getAnalyticEngineConfiguration(analyticEngineID);
        // RestfulWSClient restClient = new RestfulWSClient(aec.getIp(), aec.getPort(), aec.getApi()+"/stop");

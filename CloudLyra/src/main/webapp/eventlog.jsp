@@ -1,5 +1,5 @@
 
-<%@page import="at.ac.tuwien.dsg.edasich.service.core.dafstore.DafStore"%>
+<%@page import="at.ac.tuwien.dsg.cloudlyra.service.core.dafstore.DafStore"%>
 <%@page import="java.sql.ResultSet"%>
 
 <style type="text/css">
@@ -23,8 +23,25 @@
                     }
                 }
             }
+            
+            boolean isStart = false;
+             DafStore dafStore = new DafStore();
+                ResultSet rs = dafStore.getDAF();
+                try {
+                    while (rs.next()) {
+          
+                        String d_status = rs.getString("status");
+                        if (d_status.equals("start")){
+                            isStart = true;
+                            break;
+                        }
+                    }
 
-            if (!dafName.equals("daf")) {
+                } catch (Exception ex) {
+
+                }
+
+            if (isStart) {
 
         %>
 
@@ -43,8 +60,8 @@
             <tbody>
             <%                       
                 
-                DafStore dafStore = new DafStore();
-                ResultSet rs = dafStore.getEvent();
+              
+                rs = dafStore.getEvent();
                 
                 try {
                     while (rs.next()) {

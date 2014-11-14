@@ -4,7 +4,7 @@
     Author     : Jun
 --%>
 
-<%@page import="at.ac.tuwien.dsg.edasich.service.core.dafstore.DafStore"%>
+<%@page import="at.ac.tuwien.dsg.cloudlyra.service.core.dafstore.DafStore"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -20,11 +20,11 @@ public class AnalyticEngineManager {
         System.out.println("Analytic Engine ID: " + analyticEngineID);
         
         AnalyticEngineConfiguration analyticEngineConfiguration=null;
-        String ip = getConfig("DB.EDASICH.IP");
-        String port = getConfig("DB.EDASICH.PORT");
-        String database = getConfig("DB.EDASICH.DATABASE");
-        String username = getConfig("DB.EDASICH.USERNAME");
-        String password = getConfig("DB.EDASICH.PASSWORD");
+        String ip = getConfig("DB.CLOUDLYRA.IP");
+        String port = getConfig("DB.CLOUDLYRA.PORT");
+        String database = getConfig("DB.CLOUDLYRA.DATABASE");
+        String username = getConfig("DB.CLOUDLYRA.USERNAME");
+        String password = getConfig("DB.CLOUDLYRA.PASSWORD");
         
         UtilServiceRegistry utilServiceRegistry = new UtilServiceRegistry();    
         String sql = "Select * from AnalyticEngine where analyticEngineID='"+analyticEngineID+"'";

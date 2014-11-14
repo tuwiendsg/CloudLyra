@@ -4,7 +4,7 @@
     Author     : Jun
 --%>
 
-<%@page import="at.ac.tuwien.dsg.edasich.service.core.dafstore.DafStore"%>
+<%@page import="at.ac.tuwien.dsg.cloudlyra.service.core.dafstore.DafStore"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.util.logging.Level"%>
 <%@page import="java.util.logging.Logger"%>
@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>EDASICH</title>
+        <title>CloudLyra</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style type="text/css">
             <!--
@@ -25,7 +25,7 @@
         <link href="http://fonts.googleapis.com/css?family=Allerta" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h3>EDASICH</h3>
+        <h3>CloudLyra</h3>
         <header>
 
             <div class="nav">

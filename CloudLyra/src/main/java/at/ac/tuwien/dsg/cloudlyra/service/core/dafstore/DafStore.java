@@ -26,14 +26,28 @@ import org.apache.commons.io.IOUtils;
  * @author Jun
  */
 public class DafStore {
+    
+    String ip;
+    String port;
+    String database;
+    String username;
+    String password;
+
+    public DafStore() {
+        this.ip = getConfig("DB.CLOUDLYRA.IP");
+        this.port = getConfig("DB.CLOUDLYRA.PORT");
+        this.database = getConfig("DB.CLOUDLYRA.DATABASE");
+        this.username = getConfig("DB.CLOUDLYRA.USERNAME");
+        this.password = getConfig("DB.CLOUDLYRA.PASSWORD");
+        
+    }
+    
+    
+    
 
     public ResultSet getDAF() {
         
-        String ip = getConfig("DB.EDASICH.IP");
-        String port = getConfig("DB.EDASICH.PORT");
-        String database = getConfig("DB.EDASICH.DATABASE");
-        String username = getConfig("DB.EDASICH.USERNAME");
-        String password = getConfig("DB.EDASICH.PASSWORD");
+        
 
         
         MySqlConnectionManager connectionManager = new MySqlConnectionManager(ip, port, database, username, password);
@@ -47,11 +61,6 @@ public class DafStore {
     
     public ResultSet getEvent() {
         
-        String ip = getConfig("DB.EDASICH.IP");
-        String port = getConfig("DB.EDASICH.PORT");
-        String database = getConfig("DB.EDASICH.DATABASE");
-        String username = getConfig("DB.EDASICH.USERNAME");
-        String password = getConfig("DB.EDASICH.PASSWORD");
 
         
         MySqlConnectionManager connectionManager = new MySqlConnectionManager(ip, port, database, username, password);
@@ -68,12 +77,6 @@ public class DafStore {
         String dafStr = "";
         try {
             InputStream inputStream = null;
-
-            String ip = getConfig("DB.EDASICH.IP");
-            String port = getConfig("DB.EDASICH.PORT");
-            String database = getConfig("DB.EDASICH.DATABASE");
-            String username = getConfig("DB.EDASICH.USERNAME");
-            String password = getConfig("DB.EDASICH.PASSWORD");
 
             
             MySqlConnectionManager connectionManager = new MySqlConnectionManager(ip, port, database, username, password);
@@ -107,11 +110,11 @@ public class DafStore {
 
     public void insertDAF(String dafName, String type, InputStream daf) {
 
-        String ip = getConfig("DB.EDASICH.IP");
-        String port = getConfig("DB.EDASICH.PORT");
-        String database = getConfig("DB.EDASICH.DATABASE");
-        String username = getConfig("DB.EDASICH.USERNAME");
-        String password = getConfig("DB.EDASICH.PASSWORD");
+        String ip = getConfig("DB.CLOUDLYRA.IP");
+        String port = getConfig("DB.CLOUDLYRA.PORT");
+        String database = getConfig("DB.CLOUDLYRA.DATABASE");
+        String username = getConfig("DB.CLOUDLYRA.USERNAME");
+        String password = getConfig("DB.CLOUDLYRA.PASSWORD");
 
         MySqlConnectionManager connectionManager = new MySqlConnectionManager(ip, port, database, username, password);
 
@@ -122,11 +125,6 @@ public class DafStore {
 
     public void deleteDAF(String dafName) {
 
-        String ip = getConfig("DB.EDASICH.IP");
-        String port = getConfig("DB.EDASICH.PORT");
-        String database = getConfig("DB.EDASICH.DATABASE");
-        String username = getConfig("DB.EDASICH.USERNAME");
-        String password = getConfig("DB.EDASICH.PASSWORD");
 
         MySqlConnectionManager connectionManager = new MySqlConnectionManager(ip, port, database, username, password);
 
@@ -138,11 +136,6 @@ public class DafStore {
 
     public void updateDAF(String dafName, String status) {
 
-        String ip = getConfig("DB.EDASICH.IP");
-        String port = getConfig("DB.EDASICH.PORT");
-        String database = getConfig("DB.EDASICH.DATABASE");
-        String username = getConfig("DB.EDASICH.USERNAME");
-        String password = getConfig("DB.EDASICH.PASSWORD");
 
         MySqlConnectionManager connectionManager = new MySqlConnectionManager(ip, port, database, username, password);
 

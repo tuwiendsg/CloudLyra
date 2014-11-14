@@ -129,11 +129,12 @@ public class Uploader extends HttpServlet {
                     "Sorry this Servlet only handles file upload request");
         }
         
-       
+        if (!dafName.equals("")) {
+        
         DafStore dafStore = new DafStore();
         dafStore.insertDAF(dafName, dafType, dafFileContent);
         Logger.getLogger(Uploader.class.getName()).log(Level.INFO, dafName);
-        
+        }
         
         response.sendRedirect("daf.jsp");
     }
