@@ -1,4 +1,4 @@
-package at.ac.tuwien.dsg.jbpmengine.hadoop;
+package at.ac.tuwien.dsg.jbpmengine.task;
 
 import at.ac.tuwien.dsg.utility.CassandraConnection;
 import java.util.LinkedList;
@@ -7,8 +7,8 @@ import java.util.LinkedList;
  *
  * @author Anindita
  */
-public class Query {
-    private static final Query INSTANCE = new Query();
+public class Receiver {
+    private static final Receiver INSTANCE = new Receiver();
     CassandraConnection client=new CassandraConnection();
     
     Boolean exist=false;
@@ -16,7 +16,7 @@ public class Query {
     String ipAddress="localhost";
     int port=9042;
 
-    public static Query getInstance() {
+    public static Receiver getInstance() {
         return INSTANCE;
     }
     

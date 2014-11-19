@@ -94,27 +94,9 @@
       <processId>ac.at.tuwien.dsg.daw1</processId>
       <processName>daw1</processName>
       <processInstanceId>1</processInstanceId>
-      <variableId>exist</variableId>
-      <variableInstanceId>exist</variableInstanceId>
-      <objectToString>true</objectToString>
-    </org.drools.core.audit.event.RuleFlowVariableLogEvent>
-    <org.drools.core.audit.event.RuleFlowVariableLogEvent>
-      <type>33</type>
-      <processId>ac.at.tuwien.dsg.daw1</processId>
-      <processName>daw1</processName>
-      <processInstanceId>1</processInstanceId>
-      <variableId>exist</variableId>
-      <variableInstanceId>exist</variableInstanceId>
-      <objectToString>true</objectToString>
-    </org.drools.core.audit.event.RuleFlowVariableLogEvent>
-    <org.drools.core.audit.event.RuleFlowVariableLogEvent>
-      <type>32</type>
-      <processId>ac.at.tuwien.dsg.daw1</processId>
-      <processName>daw1</processName>
-      <processInstanceId>1</processInstanceId>
       <variableId>tableName</variableId>
       <variableInstanceId>tableName</variableInstanceId>
-      <objectToString>Sensor21</objectToString>
+      <objectToString>Sensor11</objectToString>
     </org.drools.core.audit.event.RuleFlowVariableLogEvent>
     <org.drools.core.audit.event.RuleFlowVariableLogEvent>
       <type>33</type>
@@ -123,7 +105,7 @@
       <processInstanceId>1</processInstanceId>
       <variableId>tableName</variableId>
       <variableInstanceId>tableName</variableInstanceId>
-      <objectToString>Sensor21</objectToString>
+      <objectToString>Sensor11</objectToString>
     </org.drools.core.audit.event.RuleFlowVariableLogEvent>
     <org.drools.core.audit.event.RuleFlowVariableLogEvent>
       <type>32</type>
@@ -175,33 +157,17 @@
       <processId>ac.at.tuwien.dsg.daw1</processId>
       <processName>daw1</processName>
       <processInstanceId>1</processInstanceId>
-      <nodeId>_5</nodeId>
-      <nodeName>Visualization</nodeName>
+      <nodeId>_2</nodeId>
+      <nodeName>Wearning</nodeName>
       <nodeInstanceId>3</nodeInstanceId>
     </org.drools.core.audit.event.RuleFlowNodeLogEvent>
-  </events>
-  <engine>PHREAK</engine>
-</org.drools.core.audit.WorkingMemoryLog>
-<org.drools.core.audit.WorkingMemoryLog>
-  <version>6.1</version>
-  <events/>
-  <engine>PHREAK</engine>
-</org.drools.core.audit.WorkingMemoryLog>
-<org.drools.core.audit.WorkingMemoryLog>
-  <version>6.1</version>
-  <events/>
-  <engine>PHREAK</engine>
-</org.drools.core.audit.WorkingMemoryLog>
-<org.drools.core.audit.WorkingMemoryLog>
-  <version>6.1</version>
-  <events>
     <org.drools.core.audit.event.RuleFlowNodeLogEvent>
       <type>26</type>
       <processId>ac.at.tuwien.dsg.daw1</processId>
       <processName>daw1</processName>
       <processInstanceId>1</processInstanceId>
-      <nodeId>_5</nodeId>
-      <nodeName>Visualization</nodeName>
+      <nodeId>_2</nodeId>
+      <nodeName>Wearning</nodeName>
       <nodeInstanceId>3</nodeInstanceId>
     </org.drools.core.audit.event.RuleFlowNodeLogEvent>
     <org.drools.core.audit.event.RuleFlowNodeLogEvent>
@@ -293,8 +259,8 @@
       <processId>ac.at.tuwien.dsg.daw1</processId>
       <processName>daw1</processName>
       <processInstanceId>1</processInstanceId>
-      <nodeId>_5</nodeId>
-      <nodeName>Visualization</nodeName>
+      <nodeId>_2</nodeId>
+      <nodeName>Wearning</nodeName>
       <nodeInstanceId>3</nodeInstanceId>
     </org.drools.core.audit.event.RuleFlowNodeLogEvent>
     <org.drools.core.audit.event.RuleFlowNodeLogEvent>
@@ -302,8 +268,8 @@
       <processId>ac.at.tuwien.dsg.daw1</processId>
       <processName>daw1</processName>
       <processInstanceId>1</processInstanceId>
-      <nodeId>_5</nodeId>
-      <nodeName>Visualization</nodeName>
+      <nodeId>_2</nodeId>
+      <nodeName>Wearning</nodeName>
       <nodeInstanceId>3</nodeInstanceId>
     </org.drools.core.audit.event.RuleFlowNodeLogEvent>
     <org.drools.core.audit.event.RuleFlowNodeLogEvent>
@@ -376,6 +342,61 @@
   <engine>PHREAK</engine>
 </org.drools.core.audit.WorkingMemoryLog>
 </object-stream>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+  <engine>PHREAK</engine>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+  <engine>PHREAK</engine>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+  <engine>PHREAK</engine>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+  <engine>PHREAK</engine>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+  <engine>PHREAK</engine>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+  <engine>PHREAK</engine>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+  <engine>PHREAK</engine>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+  <engine>PHREAK</engine>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+  <engine>PHREAK</engine>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+  <engine>PHREAK</engine>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+  <engine>PHREAK</engine>
+</org.drools.core.audit.WorkingMemoryLog>
 <org.drools.core.audit.WorkingMemoryLog>
   <version>6.1</version>
   <events/>

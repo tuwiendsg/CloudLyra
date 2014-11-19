@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package at.ac.tuwien.dsg.jbpmengine.hadoop;
+package at.ac.tuwien.dsg.jbpmengine.task;
 
 /**
  *
- * @author Jun
+ * @author Anindita
  */
-public class Clustering {
-    private static final Clustering INSTANCE = new Clustering();
+public class Wearning {
+    private static final Wearning INSTANCE = new Wearning();
 
-    public static Clustering getInstance() {
+    public static Wearning getInstance() {
         return INSTANCE;
     }
 

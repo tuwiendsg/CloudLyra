@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package at.ac.tuwien.dsg.jbpmengine.hadoop;
+package at.ac.tuwien.dsg.jbpmengine.task;
 
 import at.ac.tuwien.dsg.utility.DesignChart;
 import at.ac.tuwien.dsg.utility.CassandraConnection;
@@ -12,14 +12,14 @@ import java.util.LinkedList;
  *
  * @author Jun
  */
-public class Sampling {
-    private static final Sampling INSTANCE = new Sampling();
+public class Visualization {
+    private static final Visualization INSTANCE = new Visualization();
     CassandraConnection client=new CassandraConnection();
     
     String ipAddress="localhost";
     int port=9042;
 
-    public static Sampling getInstance() {
+    public static Visualization getInstance() {
         return INSTANCE;
     }
 

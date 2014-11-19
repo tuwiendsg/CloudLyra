@@ -13,7 +13,7 @@ package at.ac.tuwien.dsg.jbpmengine.engine;
 import java.util.HashMap;
 import java.util.Map;
 //import org.eclipse.jdt.internal.compiler.lookup.ProblemReasons;
-import at.ac.tuwien.dsg.jbpmengine.hadoop.Query;
+//import at.ac.tuwien.dsg.jbpmengine.task.Receiver;
 
 
 import org.kie.internal.KnowledgeBase;

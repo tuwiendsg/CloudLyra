@@ -5,7 +5,7 @@
  */
 package at.ac.tuwien.dsg.utility;
 
-import at.ac.tuwien.dsg.jbpmengine.hadoop.Query;
+import at.ac.tuwien.dsg.jbpmengine.task.Receiver;
 import ch.qos.logback.classic.db.names.TableName;
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.ColumnDefinitions;
