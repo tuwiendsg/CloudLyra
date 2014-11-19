@@ -5,6 +5,12 @@
  */
 package at.ac.tuwien.dsg.jbpmengine.task;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import org.apache.derby.iapi.services.locks.VirtualLockTable;
+
 /**
  *
  * @author Anindita
@@ -16,9 +22,16 @@ public class Wearning {
         return INSTANCE;
     }
 
-    public void start(double param) {
+    public void start(String tableName, String keySpaceName) {
         System.out.println("MultiLinearCurveFitting Starting ...");
+        JOptionPane optionPane = new JOptionPane("There need the further checking of tablename="+tableName+" and keySpaceName="+keySpaceName, JOptionPane.ERROR_MESSAGE);    
+        JDialog dialog = optionPane.createDialog("Failure");
+        dialog.setAlwaysOnTop(true);
+        dialog.setVisible(true);
+        //dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
         //algorithm
+       
+    
 
     
 
