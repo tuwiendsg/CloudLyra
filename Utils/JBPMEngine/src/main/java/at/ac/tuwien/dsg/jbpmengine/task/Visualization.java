@@ -8,9 +8,11 @@ package at.ac.tuwien.dsg.jbpmengine.task;
 import at.ac.tuwien.dsg.utility.DesignChart;
 import at.ac.tuwien.dsg.utility.CassandraConnection;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
- * @author Jun
+ * @author Anindita
  */
 public class Visualization {
     private static final Visualization INSTANCE = new Visualization();
@@ -25,36 +27,22 @@ public class Visualization {
 
     public void start(String keySpaceName, String tableName, String x, String y, String condition) {
         
-        
+        // retriving the column data using cassandra 
         client.connect(ipAddress, port);
-        
-        System.out.println("Sampling Starting ..."+keySpaceName+ "   table ="+tableName);
-       //String xQuery="SELECT collection_data FROM sensor.sensor21 WHERE collection_date = '2010/12/10';";
-       String xQuery= "SELECT "+x+" FROM "+keySpaceName+"."+tableName+" WHERE "+condition+";";
+        String xQuery= "SELECT "+x+" FROM "+keySpaceName+"."+tableName+" WHERE "+condition+";";
         LinkedList<String> xValue=client.readAll(xQuery);
-        for(int i=0;i<xValue.size();i++)
-        {
-            System.out.println("from sampling   ====="+xValue.get(i));
-        }
-        
         String yQuery= "SELECT "+y+" FROM "+keySpaceName+"."+tableName+" WHERE "+condition+";";
-       LinkedList<String> yValue=client.readAll(yQuery);
+        LinkedList<String> yValue=client.readAll(yQuery);
         
-        
-        
-        //algorithm
-
+        // visualize data in chart
         DesignChart chart12=new DesignChart();
         try {
             chart12.chart(xValue, yValue);
             
-        } catch (Exception e) {
-            System.out.println("Exception occured in sampling: "+e);
+        } catch (Exception ex) {
+            Logger.getLogger(Visualization.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        //System.out.println("ClassValue=" + samplingPercentage);
-        System.out.println("Sampling Completed ...");
-        
-        client.close();
+         client.close();
     }
 }

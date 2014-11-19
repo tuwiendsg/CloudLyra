@@ -19,7 +19,7 @@
     <bpmn2:scriptTask id="_7" name="Receiver" scriptFormat="http://www.java.com/java">
       <bpmn2:incoming>_1-_7</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
-      <bpmn2:script>String tableName =&quot;Sensor11&quot;;
+      <bpmn2:script>String tableName =&quot;Sensor21&quot;;
 String keySpaceName =&quot;sensor&quot;;
 Boolean value=Receiver.getInstance().start(tableName, keySpaceName);
 kcontext.setVariable(&quot;exist&quot;, value);

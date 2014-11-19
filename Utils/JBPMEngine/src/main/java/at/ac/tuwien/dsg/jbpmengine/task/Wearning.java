@@ -23,18 +23,11 @@ public class Wearning {
     }
 
     public void start(String tableName, String keySpaceName) {
-        System.out.println("MultiLinearCurveFitting Starting ...");
+        //visualize the waerning
         JOptionPane optionPane = new JOptionPane("There need the further checking of tablename="+tableName+" and keySpaceName="+keySpaceName, JOptionPane.ERROR_MESSAGE);    
         JDialog dialog = optionPane.createDialog("Failure");
         dialog.setAlwaysOnTop(true);
         dialog.setVisible(true);
-        //dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
-        //algorithm
        
-    
-
-    
-
-        System.out.println("MultiLinearCurveFitting Completed ...");
     }
 }

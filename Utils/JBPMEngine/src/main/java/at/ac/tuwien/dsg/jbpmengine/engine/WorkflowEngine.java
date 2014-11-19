@@ -7,15 +7,11 @@ package at.ac.tuwien.dsg.jbpmengine.engine;
 
 /**
  *
- * @author Jun
+ * @author Anindita
  */
 
 import java.util.HashMap;
 import java.util.Map;
-//import org.eclipse.jdt.internal.compiler.lookup.ProblemReasons;
-//import at.ac.tuwien.dsg.jbpmengine.task.Receiver;
-
-
 import org.kie.internal.KnowledgeBase;
 import org.kie.internal.builder.KnowledgeBuilder;
 import org.kie.internal.builder.KnowledgeBuilderFactory;
@@ -51,28 +47,20 @@ public class WorkflowEngine {
             StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
             KnowledgeRuntimeLogger logger = KnowledgeRuntimeLoggerFactory.newThreadedFileLogger(ksession, "test", 1000);
             
-           Boolean existValue=false;
-           //Query.getInstance().getExist();
-            // start a new process instance
-            Map<String, Object> params = new HashMap<String, Object>();
-          //  params.put("count", 5);
-            //params.put("ac.at.tuwien.dsg.daw1_P_1", 9.8);
-            params.put("exist", existValue);
-            params.put("tableName", new String());
-            params.put("keySpaceName", new String());
-            ksession.startProcess("ac.at.tuwien.dsg.daw1", params);
+            // specify the process variable
+             Map<String, Object> params = new HashMap<String, Object>();
+             params.put("exist", false);
+             params.put("tableName", new String());
+             params.put("keySpaceName", new String());
+             ksession.startProcess("ac.at.tuwien.dsg.daw1", params);
             
-            
-            
-            
-            
-            logger.close();
+             logger.close();
         } catch (Throwable t) {
             t.printStackTrace();
         }
 
     }
-
+         //pass the bpmn workflow diagram
     private KnowledgeBase readKnowledgeBase() throws Exception {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
         kbuilder.add(ResourceFactory.newClassPathResource(daw+".bpmn"), ResourceType.BPMN2);
