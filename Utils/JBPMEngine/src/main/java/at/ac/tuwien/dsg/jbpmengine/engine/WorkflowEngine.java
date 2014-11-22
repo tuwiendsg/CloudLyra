@@ -12,6 +12,7 @@ package at.ac.tuwien.dsg.jbpmengine.engine;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.StringTokenizer;
 import org.kie.internal.KnowledgeBase;
 import org.kie.internal.builder.KnowledgeBuilder;
 import org.kie.internal.builder.KnowledgeBuilderFactory;
@@ -24,12 +25,29 @@ import org.kie.internal.runtime.StatefulKnowledgeSession;
 public class WorkflowEngine {
 
     private String daw;
+    private String tableName;
+    private String keySpaceName;
+    private String condition;
+    private String columnX;
+    private String columnY;
     
-    public WorkflowEngine(String daw) {
-        this.daw = daw;
+    public WorkflowEngine(String dawdes) {
+        StringTokenizer st=new StringTokenizer(dawdes,",");
+        while (st.hasMoreTokens()) {
+            this.daw=st.nextToken();
+            this.tableName=st.nextToken();
+            this.keySpaceName=st.nextToken();
+            this.condition=st.nextToken();
+            this.columnX=st.nextToken();
+            this.columnY=st.nextToken();
+            
+            
+        }
+        
     }
 
     public String getDaw() {
+        
         return daw;
     }
 
@@ -44,14 +62,28 @@ public class WorkflowEngine {
         try {
             // load up the knowledge base
             KnowledgeBase kbase = readKnowledgeBase();
-            StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
-            KnowledgeRuntimeLogger logger = KnowledgeRuntimeLoggerFactory.newThreadedFileLogger(ksession, "test", 1000);
+           StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
+           KnowledgeRuntimeLogger logger = KnowledgeRuntimeLoggerFactory.newThreadedFileLogger(ksession, "test", 1000);
             
+            
+            System.out.println("daw="+daw);
+            System.out.println("tableName="+tableName);
+            System.out.println("keySpaceName="+keySpaceName);
+            System.out.println("condition="+condition);
+            System.out.println("columnX="+columnX);
+            System.out.println("columnY="+columnY);
             // specify the process variable
              Map<String, Object> params = new HashMap<String, Object>();
              params.put("exist", false);
-             params.put("tableName", new String());
-             params.put("keySpaceName", new String());
+             params.put("tableName",tableName);
+             params.put("keySpaceName", keySpaceName);
+             params.put("condition", condition);
+             params.put("columnX", columnX);
+             params.put("columnY", columnY);
+             
+             
+             
+             
              ksession.startProcess("ac.at.tuwien.dsg.daw1", params);
             
              logger.close();

@@ -20,7 +20,14 @@ public class test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        WorkflowEngine wf = new WorkflowEngine("daw5");
+        //workflow description
+        String daw = "daw5,Sensor11,sensor,collection_date = '2010/12/10',collection_time,collection_data";
+        
+        
+        
+        
+        
+        WorkflowEngine wf = new WorkflowEngine(daw);
         wf.startWFEngine();
     }
     

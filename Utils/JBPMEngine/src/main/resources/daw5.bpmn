@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:g="http://www.jboss.org/drools/flow/gpd" xmlns:tns="http://www.jboss.org/drools" xmlns="http://www.jboss.org/drools" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:yaoqiang="http://bpmn.sourceforge.net" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd" id="Definition" exporter="Yaoqiang BPMN Editor" exporterVersion="2.2.18 (GPLv3, Non-Commercial)" expressionLanguage="http://www.mvel.org/2.0" name="" targetNamespace="" typeLanguage="http://www.java.com/javaTypes">
+  
+    <!--
   <bpmn2:itemDefinition id="_countItem" structureRef="Integer"/>
   <bpmn2:itemDefinition id="_iItem" structureRef="Integer"/>
   <bpmn2:itemDefinition id="ID_1" structureRef="Double"/>
+  -->
   <bpmn2:process id="ac.at.tuwien.dsg.daw1" tns:version="1" tns:packageName="com.sample" tns:adHoc="false" name="daw1" isExecutable="true" processType="Private">
     <bpmn2:extensionElements>
       <tns:import name="at.ac.tuwien.dsg.jbpmengine.task.Visualization"/>
       <tns:import name="at.ac.tuwien.dsg.jbpmengine.task.Receiver"/>
       <tns:import name="at.ac.tuwien.dsg.jbpmengine.task.Wearning"/>
     </bpmn2:extensionElements>
+    <!--
     <bpmn2:property id="count" itemSubjectRef="_countItem"/>
     <bpmn2:property id="i" itemSubjectRef="_iItem"/>
     <bpmn2:property id="ac.at.tuwien.dsg.daw1_P_1" itemSubjectRef="ID_1"/>
+    -->
     <bpmn2:startEvent id="__1" name="Start">
       <bpmn2:outgoing>_1-_7</bpmn2:outgoing>
     </bpmn2:startEvent>
@@ -19,12 +24,11 @@
     <bpmn2:scriptTask id="_7" name="Receiver" scriptFormat="http://www.java.com/java">
       <bpmn2:incoming>_1-_7</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
-      <bpmn2:script>String tableName =&quot;Sensor21&quot;;
-String keySpaceName =&quot;sensor&quot;;
+      <bpmn2:script>String tableName =kcontext.getVariable(&quot;tableName&quot;).toString();
+String keySpaceName =kcontext.getVariable(&quot;keySpaceName&quot;).toString();
 Boolean value=Receiver.getInstance().start(tableName, keySpaceName);
 kcontext.setVariable(&quot;exist&quot;, value);
-kcontext.setVariable(&quot;tableName&quot;, tableName);
-kcontext.setVariable(&quot;keySpaceName&quot;, keySpaceName);</bpmn2:script>
+</bpmn2:script>
     </bpmn2:scriptTask>
     <bpmn2:sequenceFlow id="SequenceFlow_1" tns:priority="1" name="" sourceRef="_7" targetRef="ExclusiveGateway_1"/>
     <bpmn2:exclusiveGateway id="ExclusiveGateway_1" name="Check" gatewayDirection="Diverging">
@@ -35,9 +39,9 @@ kcontext.setVariable(&quot;keySpaceName&quot;, keySpaceName);</bpmn2:script>
     <bpmn2:scriptTask id="_5" name="Visualization" scriptFormat="text/x-groovy">
       <bpmn2:incoming>SequenceFlow_3</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_5</bpmn2:outgoing>
-      <bpmn2:script>String condition=&quot;collection_date = '2010/12/10'&quot;;
-String x=&quot;collection_time&quot;;
-String y=&quot;collection_data&quot;;
+      <bpmn2:script>String condition=kcontext.getVariable(&quot;condition&quot;);
+String x=kcontext.getVariable(&quot;columnX&quot;);
+String y=kcontext.getVariable(&quot;columnY&quot;);
 String tableName=kcontext.getVariable(&quot;tableName&quot;);
 String keySpaceName=kcontext.getVariable(&quot;keySpaceName&quot;);
 Visualization.getInstance().start(keySpaceName, tableName, x, y, condition);</bpmn2:script>
