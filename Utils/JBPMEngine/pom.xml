@@ -163,6 +163,16 @@
            <type>jar</type>
            <scope>compile</scope>
          </dependency>
+         
+         <!--netty-->
+         <dependency>
+            <groupId>org.jboss.netty</groupId>
+            <artifactId>netty</artifactId>
+            <version>3.2.10.Final</version>
+         </dependency>
+
+         
+         
         <!--end-->
 	 <!--
          <dependency>

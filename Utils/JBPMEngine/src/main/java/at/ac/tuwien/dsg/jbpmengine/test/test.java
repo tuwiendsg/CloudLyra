@@ -7,6 +7,8 @@ package at.ac.tuwien.dsg.jbpmengine.test;
 
 import at.ac.tuwien.dsg.jbpmengine.engine.WorkflowEngine;
 
+import at.ac.tuwien.dsg.jbpmengine.task.Receiver;
+
 
 
 /**
@@ -18,17 +20,19 @@ public class test {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public void workflowCall(String daw){
+    
+    //public static void main(String[] args) {
         // TODO code application logic here
         //workflow description
-        String daw = "daw5,Sensor11,sensor,collection_date = '2010/12/10',collection_time,collection_data";
+        //String daw ="daw5,Sensor11,sensor,collection_date = '2010/12/10',collection_time,collection_data";
         
-        
-        
-        
-        
-        WorkflowEngine wf = new WorkflowEngine(daw);
-        wf.startWFEngine();
+         WorkflowEngine wf = new WorkflowEngine(daw);
+         wf.startWFEngine();
+         
+        //String daw="Sensor11";
+      //System.out.println("cassandra work with rest============="+Receiver.getInstance().start(daw, "sensor"));
+    
     }
     
 }

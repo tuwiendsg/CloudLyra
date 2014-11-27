@@ -1,5 +1,7 @@
 package at.ac.tuwien.dsg.jbpmengine.rest;
 
+import at.ac.tuwien.dsg.jbpmengine.engine.WorkflowEngine;
+import at.ac.tuwien.dsg.jbpmengine.test.test;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ws.rs.Consumes;
@@ -20,11 +22,16 @@ public class JBPMRestService {
     @Produces(MediaType.TEXT_PLAIN)
     public String printMessage(@PathParam("param") String param) {
 
-        String result = "DAF: " + param;
-         Logger.getLogger(JBPMRestService.class.getName()).log(Level.INFO,result);
-        return result;
+        //String result = "DAF: " + param;
+         Logger.getLogger(JBPMRestService.class.getName()).log(Level.INFO,param);
+         //WorkflowEngine wf = new WorkflowEngine(param);
+        //wf.startWFEngine();
+         new test().workflowCall(param);
+        return param;
+        
 
     }
+    
 
     @PUT
     @Path("/start")
