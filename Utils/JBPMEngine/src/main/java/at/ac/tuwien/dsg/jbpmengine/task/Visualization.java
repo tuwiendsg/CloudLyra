@@ -10,6 +10,8 @@ import at.ac.tuwien.dsg.utility.CassandraConnection;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Anindita
@@ -44,7 +46,15 @@ public class Visualization {
         } catch (Exception ex) {
             Logger.getLogger(Visualization.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        // inform the user using the dialog box
+        {
+        JOptionPane optionPane = new JOptionPane("The chart is created under the folder="
+                                                  + "/Users/dsg/Documents/phd/Big Demo/CloudLyra/Utils/JBPMEngine/example", 
+                                                      JOptionPane.INFORMATION_MESSAGE);    
+        JDialog dialog = optionPane.createDialog("Information about the generated file");
+        dialog.setAlwaysOnTop(true);
+        dialog.setVisible(true);
+        }        
          client.close();
     }
 }
