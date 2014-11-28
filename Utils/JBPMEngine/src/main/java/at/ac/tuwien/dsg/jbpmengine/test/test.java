@@ -7,27 +7,26 @@ package at.ac.tuwien.dsg.jbpmengine.test;
 
 import at.ac.tuwien.dsg.jbpmengine.engine.WorkflowEngine;
 
-import at.ac.tuwien.dsg.jbpmengine.task.Receiver;
-
-
-
 /**
  *
- * @author Jun
+ * @author Anindita
  */
 public class test {
 
     /**
      * @param args the command line arguments
      */
+    //@Param
     public void workflowCall(String daw){
     
     //public static void main(String[] args) {
         // TODO code application logic here
         //workflow description
-        //String daw ="daw5,Sensor11,sensor,collection_date = '2010/12/10',collection_time,collection_data";
+        //String daw ="daw5,Sensor21,sensor,collection_date = '2010/12/10',collection_time,collection_data";
+        //String test="collection_date = '2010.12.10'";
+        //System.out.println("test=     "+test.replace(".", "/"));
         
-         WorkflowEngine wf = new WorkflowEngine(daw);
+        WorkflowEngine wf = new WorkflowEngine(daw);
          wf.startWFEngine();
          
         //String daw="Sensor11";

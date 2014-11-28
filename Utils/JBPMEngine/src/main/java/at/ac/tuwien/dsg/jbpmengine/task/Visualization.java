@@ -27,11 +27,13 @@ public class Visualization {
 
     public void start(String keySpaceName, String tableName, String x, String y, String condition) {
         
+         String conditionf=condition.replace(".", "/");
+        
         // retriving the column data using cassandra 
         client.connect(ipAddress, port);
-        String xQuery= "SELECT "+x+" FROM "+keySpaceName+"."+tableName+" WHERE "+condition+";";
+        String xQuery= "SELECT "+x+" FROM "+keySpaceName+"."+tableName+" WHERE "+conditionf+";";
         LinkedList<String> xValue=client.readAll(xQuery);
-        String yQuery= "SELECT "+y+" FROM "+keySpaceName+"."+tableName+" WHERE "+condition+";";
+        String yQuery= "SELECT "+y+" FROM "+keySpaceName+"."+tableName+" WHERE "+conditionf+";";
         LinkedList<String> yValue=client.readAll(yQuery);
         
         // visualize data in chart

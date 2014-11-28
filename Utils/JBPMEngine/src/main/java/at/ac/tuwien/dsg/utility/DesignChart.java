@@ -64,9 +64,16 @@ public class DesignChart {
    
       //generation of the image  
        {
+           try {
+               
         BufferedImage img=chart.createBufferedImage( 300, 200);
-        File outputfile = new File("./example/Sample.png");
+        //File outputfile = new File("./example/Sample.png");
+        File outputfile = new File("/Users/dsg/Documents/phd/Big Demo/CloudLyra/Utils/JBPMEngine/example/Sample.png");
         ImageIO.write(img, "png", outputfile);
+        
+           } catch (Exception e) {
+               System.out.println("exception occured in tomcat: "+e);
+           }
        }
     
     }
