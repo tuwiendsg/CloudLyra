@@ -17,6 +17,14 @@
             <id>codehaus</id>
             <url>http://repository.codehaus.org/org/codehaus</url>
         </repository>
+        
+        
+        
+        <repository>
+            <id>infosys-maven-ext</id>
+            <name>infosys-maven-releases</name>
+            <url>http://repo.infosys.tuwien.ac.at/artifactory/ext</url>
+        </repository>
     </repositories>
 
     <dependencies>
