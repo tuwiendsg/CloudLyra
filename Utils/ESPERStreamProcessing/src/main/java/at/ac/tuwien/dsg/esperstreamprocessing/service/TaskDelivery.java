@@ -41,10 +41,10 @@ public class TaskDelivery {
 
    
 
-            RestHttpClient ws = new RestHttpClient(uri);
-            ws.callPostMethod(paramList);
+//            RestHttpClient ws = new RestHttpClient(uri);
+//            ws.callPostMethod(paramList);
             //System.out.println("Forward Task !");
-            String log = "Forward Task !" + paramList.toString();
+            String log = "Forward Task to uri "+uri+" !" + paramList.toString() ;
             Logger.getLogger(EventHandler.class.getName()).log(Level.INFO, log);
         }
     }
