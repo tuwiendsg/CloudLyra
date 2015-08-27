@@ -12,7 +12,7 @@ import java.io.IOException;
  *
  * @author Jun
  */
-public class App {
+public class SensorApp {
 
     /**
      * @param args the command line arguments
@@ -23,21 +23,11 @@ public class App {
         
         String filePath = "data/methane";
         String attrs ="12,13,14,15,16";
-        String latency ="1000";
-        
-        
-        
-        
-        /*
-        String filePath = args[0];
-        String attrs =args[1];
-        String latency =args[2];
-        */
-        
-        
-        String ip = Configuration.getConfig("IP");
-        String port = Configuration.getConfig("PORT");
-        String momQueue = Configuration.getConfig("MOM.QUEUE");
+        String latency ="3000";
+      
+        String ip = "128.130.172.230";
+        String port = "9124";
+        String momQueue = "QUEUE1";
         
         
         CSVLoader loader = new  CSVLoader(ip, port, Integer.parseInt(latency),momQueue);

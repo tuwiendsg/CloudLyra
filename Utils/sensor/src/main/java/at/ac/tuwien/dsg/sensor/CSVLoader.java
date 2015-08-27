@@ -133,7 +133,7 @@ public class CSVLoader {
                 String sensorDataStr = readSensorDataTemplate();
 
                 UUID uuid = UUID.randomUUID();
-                String sensorName = "Sensor" + attrList[i];
+                String sensorName = "fcu_ff1_space_temp";
                 String sensorValue = str[attIndex];
 
                 sensorDataStr = sensorDataStr.replaceAll("#key#", uuid.toString());

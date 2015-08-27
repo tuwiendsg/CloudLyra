@@ -112,7 +112,7 @@ public class EventSubscriber implements StatementSubscriber {
         
       
         TaskDelivery delivery = new TaskDelivery();
-        delivery.deliver(task,enrichmentInfo,eventVals, daf.getAnalyticResultDelegate().getDafDelegator().getRestapi());
+        delivery.deliver(task,"",eventVals, daf.getAnalyticResultDelegate().getDafDelegator().getRestapi());
     }
 
     public void enrichData(List<String> listOfSensors) {
@@ -129,12 +129,12 @@ public class EventSubscriber implements StatementSubscriber {
         }
 
         String enrichmentURI = daf.getDafAnalyticCep().getEnrichmentURI();
-        RestfulWSClient ws = new RestfulWSClient(enrichmentURI);
+       /// RestfulWSClient ws = new RestfulWSClient(enrichmentURI);
         
-        enrichmentInfo = ws.callGetDirectURL(params);
+       // enrichmentInfo = ws.callGetDirectURL(params);
 
-        Logger.getLogger(EventSubscriber.class.getName()).log(Level.INFO, "ENRICHMENT DATA: " + enrichmentInfo);
-  
+    //    Logger.getLogger(EventSubscriber.class.getName()).log(Level.INFO, "ENRICHMENT DATA: " + enrichmentInfo);
+  //
 
 
     }

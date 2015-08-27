@@ -75,8 +75,11 @@ public class QueueClient implements Runnable {
             Destination destination = session.createQueue(subject);
             MessageConsumer consumer = session.createConsumer(destination);
 
+            
+            System.out.println("Open Connection: " + url + " - Queue: " + subject);
+          //  System.out.println("limit: " + limit);
             for (int i = 0; i < limit; i++) {
-                    
+            //ß        System.out.println("message");
                     Message message = consumer.receive();
                     onMessageStream(message);
                     checkInterrupt();
@@ -90,7 +93,7 @@ public class QueueClient implements Runnable {
     }
 
     private void onMessageStream(Message message) {
-
+       // System.out.println("Running ...");
         try {
 
             if (message instanceof MapMessage) {
@@ -102,8 +105,8 @@ public class QueueClient implements Runnable {
                     String sensorOperation = fieldsNames.nextElement().toString();
 
                     String data = mapMessage.getString(sensorOperation);
-
-                    if (sensorOperation.equals("INSERT_ROWS")) {
+                //    System.out.println("RAW DATA RECEIVED: " + data);
+               //     if (sensorOperation.equals("INSERT_ROWS")) {
                         JAXBContext bContext = JAXBContext.newInstance(CreateRowsStatement.class);
                         Unmarshaller um = bContext.createUnmarshaller();
                         CreateRowsStatement crs = (CreateRowsStatement) um.unmarshal(new StringReader(data));
@@ -131,7 +134,7 @@ public class QueueClient implements Runnable {
                             eventHandler.handle(sensorEvent);
                         }
 
-                    }
+                  //  }
 
                 }
 
@@ -193,6 +196,11 @@ public class QueueClient implements Runnable {
         mom_ip = daf.getDafInputCep().getInputDataSource().getIp();
         mom_port = daf.getDafInputCep().getInputDataSource().getPort();
         mon_queue = daf.getDafInputCep().getInputDataSource().getQueue();
+        limit = Integer.MAX_VALUE;
+        System.out.println("DAF Name: " + dafName);
+        System.out.println("MOM IP: " + mom_ip);
+        System.out.println("MOM PORT: " + mom_port);
+        System.out.println("MOM QUEUE: " + mon_queue);
         
         
         
