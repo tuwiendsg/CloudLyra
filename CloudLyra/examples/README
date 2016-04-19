@@ -4,9 +4,11 @@
 **************************************
 
 
-Example 1: EPICS/EDASICH/examples/example1/daf3
+Example 1: EPICS/DEPIC/examples/example1/daf3
 
-This example describes a data analytic function (daf) for streaming data analytics with gas sensor data. The scenario is that EDASICH continuously receives gas sensor data from a message queue, and analysis the data. If three continuously values of sensor data are greater than 300, there will be a  task is sent to human. 
+This example describes a data analytic function (daf) for streaming data analytics with gas sensor data. 
+The scenario is that DEPIC continuously receives gas sensor data from a message queue, and analysis the data. If three continuously values of sensor data are greater than 300, there will be a  task is sent to human. 
+
 
 The daf includes 4 parts:
 
