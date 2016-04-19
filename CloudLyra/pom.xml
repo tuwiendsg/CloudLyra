@@ -10,7 +10,6 @@
     <name>CloudLyra</name>
 
     <repositories>
-  
         <repository>
             <id>Alfresco Maven Repository</id>
             <url>https://maven.alfresco.com/nexus/content/groups/public/</url>
@@ -78,12 +77,16 @@
             <version>5.1.31</version>
             <type>jar</type>
         </dependency>
+        
+        <!-- Temporary solution -->
         <!-- Internal dependencies -->
         
         <dependency>
             <groupId>DaaS</groupId>
             <artifactId>DaaS</artifactId>
             <version>1.0</version>
+            <scope>system</scope>
+             <systemPath>${basedir}/lib/DaaS-1.0.jar</systemPath>
         </dependency>
         
 
@@ -92,12 +95,13 @@
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.8.5</version>
         </dependency>
-    
+    <!-- Temporary solution -->
     <dependency>
             <groupId>at.ac.tuwien.dsg</groupId>
             <artifactId>salam</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-
+			<scope>system</scope>
+             <systemPath>${basedir}/lib/salam-0.0.1-SNAPSHOT.jar</systemPath>
         </dependency>
   
         <!--
